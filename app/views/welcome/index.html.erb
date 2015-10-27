@@ -1,0 +1,17 @@
+<h1>Welcome to My Travel Site</h1>
+<p>The world's least factual travel website.</p>
+
+<p><%= @homeland %></p>
+
+<ul>
+	<% @countries.each do |country| %>
+		<li><%= country %>
+	<% end %>
+</ul>
+
+
+<% @country_image_hash.each do |k,v| %>
+	<p>
+		<%= image_tag v, alt: k %>
+	</p>
+<% end %>
