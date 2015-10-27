@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
+  get 'contact' => 'welcome#contact'
+  #get 'who_we_are_and_what_we_believe' => 'welcome#about', as: :about
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
