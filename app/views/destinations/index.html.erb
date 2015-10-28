@@ -1,0 +1,24 @@
+<% if notice != nil %>
+  <div class="alert alert-danger" role="alert">
+   <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+
+<%= link_to 'New Destination', new_destination_path, class: "btn btn-success" %>
+
+<h1>Places I want to go</h1>
+
+<div class="row"> 
+  <% @destinations.each do |destination| %>
+  <div class="col-md-4">
+    <div id="center-it" class="panel panel-default">
+      <div class="panel-heading"><%= "#{destination.city}, #{destination.country}" %></div>
+      <div class="panel-body"><%= destination.description %></div>
+      <div class="panel-footer"><%= link_to 'Show', destination, class: "btn btn-info" %>
+      <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %>
+      <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></div>
+      </div>
+    </div>
+  <% end %>
+</div> 
+<%= link_to 'New Destination', new_destination_path, class: "btn btn-success" %>
