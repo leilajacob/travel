@@ -8,6 +8,11 @@
 
 <h1>Places I want to go</h1>
 
+<%= link_to "All", destinations_path %>
+<% @my_countries.each do |dest| %>
+  <%= link_to dest.country, destinations_path(country: dest.country) %>
+<% end %>
+
 <div class="row"> 
   <% @destinations.each do |destination| %>
   <div class="col-md-4">

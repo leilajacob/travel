@@ -19,10 +19,5 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	<P>Wow! I have big feet!</P>
 <% end %>
 
-<p>
-	<%= link_to "Home Page", root_path, class: "btn btn-primary info" %>
-</p>
-
-<p>
- <%= link_to "Contact Us", contact_path(), class: "btn btn-info" %>
-</p>
+<%= link_to "Red", about_path(color:"red"), class: "btn btn-danger" %>
+<%= link_to "Blue", about_path(color:"blue"), class: "btn btn-primary" %>
