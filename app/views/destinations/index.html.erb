@@ -8,17 +8,23 @@
 
 <h1>Places I want to go</h1>
 
-<%= link_to "All", destinations_path %>
+<ul class="nav nav-pills">
+  <li><%= link_to "All", destinations_path %></li>
 <% @my_countries.each do |dest| %>
-  <%= link_to dest.country, destinations_path(country: dest.country) %>
+  <li><%= link_to dest.country, destinations_path(country: dest.country) %></li>
 <% end %>
+</ul>
 
 <div class="row"> 
   <% @destinations.each do |destination| %>
   <div class="col-md-4">
     <div id="center-it" class="panel panel-default">
       <div class="panel-heading"><%= "#{destination.city}, #{destination.country}" %></div>
-      <div class="panel-body"><%= destination.description %></div>
+      <div class="panel-body">
+        <p><%= destination.description %></p>
+        <p><%= destination.population %></p>
+      </div>
+
       <div class="panel-footer"><%= link_to 'Show', destination, class: "btn btn-info" %>
       <%= link_to 'Edit', edit_destination_path(destination), class: "btn btn-warning" %>
       <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></div>
