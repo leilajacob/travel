@@ -13,15 +13,14 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function (){
 
     function initialize() {
       var mapOptions = {
-      center: { lat: 33.835413, lng: -84.383001
-      zoom: 8
+      center: { lat: 33.835413, lng: -84.383001},
+      zoom: 15
       };
         
       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);    
