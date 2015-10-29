@@ -21,7 +21,16 @@
     <div id="center-it" class="panel panel-default">
       <div class="panel-heading"><%= "#{destination.city}, #{destination.country}" %></div>
       <div class="panel-body">
-        <p><%= destination.description %></p>
+        <% if destination.avatar_file_name != nil %>
+            <p><%= image_tag destination.avatar.url(:thumb) %></p>
+          <% else %>
+          <% if destination.avatar_file_name != nil %>
+   <%= image_tag destination.avatar.url(:medium), class: "img-responsive" %>
+            <p><%= image_tag "missing-dest-image.png" %></p>
+            <% end %>
+          <% end %>
+        <p><%= destination.description[0..150] %>... </p>
+        <p><%= link_to "READ MORE", destination %></P>
         <p><%= destination.population %></p>
       </div>
 
@@ -32,4 +41,6 @@
     </div>
   <% end %>
 </div> 
+
+
 <%= link_to 'New Destination', new_destination_path, class: "btn btn-success" %>

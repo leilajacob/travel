@@ -27,6 +27,16 @@ class DestinationsController < ApplicationController
   def edit
   end
 
+  def remove_image
+    destination = Destination.find(params[:id])
+    destination.avatar_file_name = nil
+    destination.avatar_file_size = nil
+    destination.avatar_content_type = nil
+    destination.save
+
+    redirect_to edit_destination_path(destination)
+  end
+
   # POST /destinations
   # POST /destinations.json
   def create
