@@ -20,7 +20,7 @@ $(document).ready(function (){
 
     function initialize() {
       var mapOptions = {
-      center: { lat: -34.397, lng: 150.644},
+      center: { lat: 33.835413, lng: -84.383001
       zoom: 8
       };
         
